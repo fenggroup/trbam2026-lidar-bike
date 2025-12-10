@@ -1,5 +1,5 @@
 ---
-title: "Quantifying drivers-overtaking-bicyclists with surrogate safety measures from a high-resolution lidar"
+title: "Quantifying drivers-overtaking-bicyclists with surrogate safety measures from a high-resolution 3D lidar"
 
 authors: 
   - name: Rayane Moustafa
@@ -27,28 +27,30 @@ affiliations:
 
 date: 2026-01-14
 date-format: long
-
+bibliography: references.bib
+csl: nature.csl
 ---
 
-## Bicycling safety issues {data-menu-title="Background" }
+## Bicycling in the U.S.
 
-- Bicycling is underutilized in the U.S. with 0.4% of commuters using bicycles.
-- In 2023, 1166 bicyclists were killed and over 46,000 injured in the U.S.
-- Traditional safety studies used manual or low-resolution methods, offering limited insight into how overtaking unfolds and motivating the need for advanced sensing technologies.
+- Bicycling is underutilized with **0.5%** of commuters riding a bicycle (vs. 69.2% commuters driving alone).[@uscb2024commuting]
+- **1,166** bicyclists were killed and **49,989** injured in 2023.[@ncsa2025bicyclists]
+- Drivers overtaking bicyclists is one of the most dangerous encounters with rear-end collisions accounting for 40% bicyclist fatalities.[@lab2014bicyclist]
+- Previous studies on overtaking bicyclists typically used lower resolution sensors (e.g., ultrasonic sensors [@walker2007drivers; @beck2019much] or 2D lidar [@dozza2016drivers]), offering limited insights.
 
-## Lidar (Light Detection and Ranging)
+## High resolution 3D lidar 
 
-- Lidar is a laser-based sensing technology that captures detailed 3D representations of surroundings.
+- Lidar (Light Detection and Ranging) is a laser-based sensing technology that captures detailed 3D representations of surroundings.
 - Lidar enables detailed 3D analysis of vehicle overtaking behavior, capturing precise distances and trajectories that traditional methods miss.
 - This study leverages lidar to bridge the gap between technological innovation and safer bicycling environments.
 
-## Objectives {}
+## Study objectives
 
-- Collecting real-word data using cameras and lidar.
-- Develop an offline algorithm to automatically detect and track overtaking vehicles based on the point clouds from a bicycle-mounted lidar.
-- Develop surrogate safety measures for bicycling safety that can be automatically and objectively measured.
+- Collecting and sharing real-word bicycle riding data using high resolution lidar and cameras.
+- Develop an algorithm to automatically detect and track overtaking vehicles based on the lidar point clouds.
+- Develop quantitative surrogate safety measures for bicycling safety research.
 
-# {data-menu-title="The lidar-equipped research bicycle" }
+# {data-menu-title="The lidar-equipped research bicycle"}
 
 ::: {style="text-align:center;font-size:50px;"}
 ![The lidar-equipped research bicycle](./images/lidar-bike.png){fig-align="center" height="580"}
@@ -60,7 +62,7 @@ date-format: long
 [![](./images/point-cloud-demo.png){fig-align="center" height="580"}](https://fenggroup.org/pointcloud/examples/bike-2.html){preview-link="true"}
 :::
 
-## Data collection
+## Preliminary data collection
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -109,7 +111,7 @@ date-format: long
 ::::
 
 ::: {style="text-align:center;"}
-Segmented overtaking vehicles with their 3D bounding boxex
+Segmented overtaking vehicles with their 3D bounding boxes
 :::
 
 ## Passing phase definition
@@ -191,13 +193,28 @@ This material is based upon work supported by the National Science Foundation un
 
 ![](images/nsf-logo.png){fig-align="center" height="250"}
 
+## References
+
+::: {#refs}
+:::
+
 ## Resources
 
-- Slide URL: <>
-- Project webpage: <https://fenggroup.org/lidar-bike/>
-- Open data repository: <>
-- Code repository <>
+:::: {.columns}
+::: {.column width="75%"}
+Slide URL and QR code:
+
+<http://fenggroup.org/trbam2026-lidar-bike/>
+:::
+::: {.column width="25%"}
+{{< qrcode http://fenggroup.org/trbam2026-lidar-bike/ width=150 height=150 >}}
+:::
+::::
+
+- Public repositories
+  - Data: <>
+  - Code: <>
 - Contact
   - Rayane Moustafa: <rayanem@umich.edu>
-  - Fred Feng: <fredfeng@umich.edu>
+  - Dr. Fred Feng: <fredfeng@umich.edu>
 
