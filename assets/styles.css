@@ -1,0 +1,17 @@
+
+#title-slide .title {
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+#title-slide .date {
+  margin-top: 1em;
+}
+
+.reveal figcaption {
+  text-align: center;
+}
+
+.reveal .footer {
+  font-size: 1.2em;   /* try 0.6em–0.8em */
+}
