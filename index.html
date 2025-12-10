@@ -6,11 +6,12 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/quarto-contrib/qrcodejs-v1.0.0/qrcode.js"></script><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
   <meta name="dcterms.date" content="2026-01-14">
-  <title>Quantifying drivers-overtaking-bicyclists with surrogate safety measures from a high-resolution lidar</title>
+  <title>Quantifying drivers-overtaking-bicyclists with surrogate safety measures from a high-resolution 3D lidar</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,7 +29,27 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-  </style>
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
   <link rel="stylesheet" href="styles.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -128,7 +149,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Quantifying drivers-overtaking-bicyclists with surrogate safety measures from a high-resolution lidar</h1>
+  <h1 class="title">Quantifying drivers-overtaking-bicyclists with surrogate safety measures from a high-resolution 3D lidar</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -165,28 +186,29 @@ Fred Feng
 
   <p class="date">January 14, 2026</p>
 </section>
-<section id="bicycling-safety-issues" class="slide level2" data-menu-title="Background">
-<h2>Bicycling safety issues</h2>
+<section id="bicycling-in-the-u.s." class="slide level2">
+<h2>Bicycling in the U.S.</h2>
 <ul>
-<li>Bicycling is underutilized in the U.S. with 0.4% of commuters using bicycles.</li>
-<li>In 2023, 1166 bicyclists were killed and over 46,000 injured in the U.S.</li>
-<li>Traditional safety studies used manual or low-resolution methods, offering limited insight into how overtaking unfolds and motivating the need for advanced sensing technologies.</li>
+<li>Bicycling is underutilized with <strong>0.5%</strong> of commuters riding a bicycle (vs.&nbsp;69.2% commuters driving alone).<span class="citation" data-cites="uscb2024commuting"><sup><a href="#/references" role="doc-biblioref" onclick="">1</a></sup></span></li>
+<li><strong>1,166</strong> bicyclists were killed and <strong>49,989</strong> injured in 2023.<span class="citation" data-cites="ncsa2025bicyclists"><sup><a href="#/references" role="doc-biblioref" onclick="">2</a></sup></span></li>
+<li>Drivers overtaking bicyclists is one of the most dangerous encounters with rear-end collisions accounting for 40% bicyclist fatalities.<span class="citation" data-cites="lab2014bicyclist"><sup><a href="#/references" role="doc-biblioref" onclick="">3</a></sup></span></li>
+<li>Previous studies on overtaking bicyclists typically used lower resolution sensors (e.g., ultrasonic sensors<span class="citation" data-cites="walker2007drivers beck2019much"><sup><a href="#/references" role="doc-biblioref" onclick="">4</a>,<a href="#/references" role="doc-biblioref" onclick="">5</a></sup></span> or 2D lidar<span class="citation" data-cites="dozza2016drivers"><sup><a href="#/references" role="doc-biblioref" onclick="">6</a></sup></span>), offering limited insights.</li>
 </ul>
 </section>
-<section id="lidar-light-detection-and-ranging" class="slide level2">
-<h2>Lidar (Light Detection and Ranging)</h2>
+<section id="high-resolution-3d-lidar" class="slide level2">
+<h2>High resolution 3D lidar</h2>
 <ul>
-<li>Lidar is a laser-based sensing technology that captures detailed 3D representations of surroundings.</li>
+<li>Lidar (Light Detection and Ranging) is a laser-based sensing technology that captures detailed 3D representations of surroundings.</li>
 <li>Lidar enables detailed 3D analysis of vehicle overtaking behavior, capturing precise distances and trajectories that traditional methods miss.</li>
 <li>This study leverages lidar to bridge the gap between technological innovation and safer bicycling environments.</li>
 </ul>
 </section>
-<section id="objectives" class="slide level2">
-<h2>Objectives</h2>
+<section id="study-objectives" class="slide level2">
+<h2>Study objectives</h2>
 <ul>
-<li>Collecting real-word data using cameras and lidar.</li>
-<li>Develop an offline algorithm to automatically detect and track overtaking vehicles based on the point clouds from a bicycle-mounted lidar.</li>
-<li>Develop surrogate safety measures for bicycling safety that can be automatically and objectively measured.</li>
+<li>Collecting and sharing real-word bicycle riding data using high resolution lidar and cameras.</li>
+<li>Develop an algorithm to automatically detect and track overtaking vehicles based on the lidar point clouds.</li>
+<li>Develop quantitative surrogate safety measures for bicycling safety research.</li>
 </ul>
 </section>
 <section id="section" class="title-slide slide level1 center" data-menu-title="The lidar-equipped research bicycle">
@@ -212,8 +234,8 @@ Fred Feng
 </div>
 </div>
 </section>
-<section id="data-collection" class="slide level2">
-<h2>Data collection</h2>
+<section id="preliminary-data-collection" class="slide level2">
+<h2>Preliminary data collection</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
@@ -270,7 +292,7 @@ Fred Feng
 <p><img data-src="images/segmented-vehicle-3.png"> <img data-src="images/segmented-vehicle-4.png"></p>
 </div></div>
 <div style="text-align:center;">
-<p>Segmented overtaking vehicles with their 3D bounding boxex</p>
+<p>Segmented overtaking vehicles with their 3D bounding boxes</p>
 </div>
 </section>
 <section id="passing-phase-definition" class="slide level2">
@@ -373,17 +395,57 @@ Fred Feng
 </figure>
 </div>
 </section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-uscb2024commuting" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">United States Census Bureau. <a href="https://data.census.gov/table?q=S0801:">Commuting characteristics by sex</a>. <em>Census.gov</em> (2024).</div>
+</div>
+<div id="ref-ncsa2025bicyclists" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">National Center for Statistics and Analysis. <em>Bicyclists and Other Cyclists: 2023 Data</em>. <a href="https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813739.pdf">https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/813739.pdf</a> (2025).</div>
+</div>
+<div id="ref-lab2014bicyclist" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">League of American Bicyclists. <em>Bicyclist Safety Must Be a Priority Findings from a Year of Fatality Tracking - and the Urgent Need for Better Data</em>. <a href="http://bikeleague.org/sites/default/files/EBC_report_final.pdf">http://bikeleague.org/sites/default/files/EBC_report_final.pdf</a> (2014).</div>
+</div>
+<div id="ref-walker2007drivers" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Walker, I. Drivers overtaking bicyclists: Objective data on the effects of riding position, helmet use, vehicle type and apparent gender. <em>Accident Analysis &amp; Prevention</em> <strong>39</strong>, 417–425 (2007).</div>
+</div>
+<div id="ref-beck2019much" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Beck, B. <em>et al.</em> How much space do drivers provide when passing cyclists? Understanding the impact of motor vehicle and infrastructure characteristics on passing distance. <em>Accident Analysis &amp; Prevention</em> <strong>128</strong>, 253–260 (2019).</div>
+</div>
+<div id="ref-dozza2016drivers" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Dozza, M., Schindler, R., Bianchi-Piccinini, G. &amp; Karlsson, J. <a href="https://doi.org/10.1016/j.aap.2015.12.008">How do drivers overtake cyclists?</a> <em>Accident Analysis &amp; Prevention</em> <strong>88</strong>, 29–36 (2016).</div>
+</div>
+</div>
+</section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
+<div class="columns">
+<div class="column" style="width:75%;">
+<p>Slide URL and QR code:</p>
+<p><a href="http://fenggroup.org/trbam2026-lidar-bike/" class="uri">http://fenggroup.org/trbam2026-lidar-bike/</a></p>
+</div><div class="column" style="width:25%;">
+<div id="" class="qrcode"></div>
+<script type="text/javascript">
+(function() {
+  var script = document.currentScript;
+  var qrcode = script.previousElementSibling;
+  qrcode.qrcode = new QRCode(qrcode, {"colorDark":"#000000","colorLight":"#ffffff","height":"150","text":"http://fenggroup.org/trbam2026-lidar-bike/","width":"150"});
+  script.remove();
+})();
+</script>
+    
+</div></div>
 <ul>
-<li>Slide URL: &lt;&gt;</li>
-<li>Project webpage: <a href="https://fenggroup.org/lidar-bike/" class="uri">https://fenggroup.org/lidar-bike/</a></li>
-<li>Open data repository: &lt;&gt;</li>
-<li>Code repository &lt;&gt;</li>
+<li>Public repositories
+<ul>
+<li>Data: &lt;&gt;</li>
+<li>Code: &lt;&gt;</li>
+</ul></li>
 <li>Contact
 <ul>
 <li>Rayane Moustafa: <a href="mailto:rayanem@umich.edu" class="email">rayanem@umich.edu</a></li>
-<li>Fred Feng: <a href="mailto:fredfeng@umich.edu" class="email">fredfeng@umich.edu</a></li>
+<li>Dr.&nbsp;Fred Feng: <a href="mailto:fredfeng@umich.edu" class="email">fredfeng@umich.edu</a></li>
 </ul></li>
 </ul>
 
