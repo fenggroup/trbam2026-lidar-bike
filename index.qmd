@@ -26,20 +26,8 @@ affiliations:
     url: https://umdearborn.edu
 
 date: 2026-01-14
-
 date-format: long
-format: 
-    revealjs:
-        slide-number: true
-        preview-links: auto
-        css: /assets/styles.css
-        html-math-method: mathjax
-        # logo: /assets/images/fenggroup-logo.png
-        # title-slide-attributes:
-        #   footer: '<img src="assets/images/fenggroup-logo.png" style="height:40px;">'
-        # footer: "Transportation Research Board Annual Meeting 2026"
-    pdf:
-      documentclass: beamer # Or article, etc.
+
 ---
 
 ## Bicycling safety issues {data-menu-title="Background" }
@@ -48,7 +36,7 @@ format:
 - In 2023, 1166 bicyclists were killed and over 46,000 injured in the U.S.
 - Traditional safety studies used manual or low-resolution methods, offering limited insight into how overtaking unfolds and motivating the need for advanced sensing technologies.
 
-## Lidar (Light Detection and Ranging) {}
+## Lidar (Light Detection and Ranging)
 
 - Lidar is a laser-based sensing technology that captures detailed 3D representations of surroundings.
 - Lidar enables detailed 3D analysis of vehicle overtaking behavior, capturing precise distances and trajectories that traditional methods miss.
@@ -66,13 +54,13 @@ format:
 ![The lidar-equipped research bicycle](./images/lidar-bike.png){fig-align="center" height="580"}
 :::
 
-# {data-menu-title="Point cloud demo" }
+# {data-menu-title="Point cloud demo"}
 
 ::: {style="text-align:center;"}
 [![](./images/point-cloud-demo.png){fig-align="center" height="580"}](https://fenggroup.org/pointcloud/examples/bike-2.html){preview-link="true"}
 :::
 
-## Data collection {}
+## Data collection
 
 :::: {.columns}
 ::: {.column width="60%"}
@@ -90,7 +78,7 @@ format:
 :::
 ::::
 
-# {data-menu-title="Riding data video demo" }
+# {data-menu-title="Riding data video demo"}
 
 ::: {style="text-align: center;"}
 <iframe width="920" height="520" src="https://www.youtube.com/embed/7QOxQVuoDN8?si=DuOOFR4guGslF3Gt" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -107,7 +95,7 @@ format:
 :::
 
 
-# {data-menu-title="Segmented vehicles" }
+# {data-menu-title="Segmented vehicles"}
 
 :::: {.columns}
 ::: {.column}
@@ -124,7 +112,7 @@ format:
 Segmented overtaking vehicles with their 3D bounding boxex
 :::
 
-## Passing phase definition {}
+## Passing phase definition
 
 <br>
 
@@ -137,7 +125,7 @@ Segmented overtaking vehicles with their 3D bounding boxex
 :::
 ::::
 
-## Surrogate safety measures {}
+## Surrogate safety measures
 
 - **Passing distance**: the closest distance from the lidar to the car within the passing region
 - **Passing duration**: the duration of time that a vehicle spends in the bicycle's passing region
@@ -145,7 +133,7 @@ Segmented overtaking vehicles with their 3D bounding boxex
   - **bicycle speed** estimated using frame-to-frame registration with ICP & RANSAC algorithms
   - **relative vehicle speed** estimated using numerical differentiation of vehicle centroid locations across frames  
 
-## Results {}
+## Results
 
 - 306 overtaking events from two trips
 - Passing distance validation over a sample of 98 events
@@ -167,7 +155,7 @@ Segmented overtaking vehicles with their 3D bounding boxex
 ![Validation of bicycle speed estimation based on GPS speed ground truth](images/bicycle-speed-validation.png){fig-align="center"}
 :::
 
-# {data-menu-title="Result figures" }
+# {data-menu-title="Result figures"}
 
 :::: {.columns}
 ::: {.column}
@@ -180,20 +168,20 @@ Segmented overtaking vehicles with their 3D bounding boxex
 :::
 ::::
 
-## Discussions {}
+## Discussions
 
 - Lane geometry strongly influenced clearance: left-lane ≈ 4.47 m, right-lane ≈ 1.86 m.
 - Close passes (<1.5 m) occurred at both low and high speeds, showing risk is not speed-dependent.
 - Passing duration revealed exposure over time; longer overtakes often due to congestion or intersections.
 - Safe overtaking depends on geometry + speed + traffic context, not any single factor.
 
-## Future work {}
+## Future work
 
 - Expand data collection across more routes, roadway types, and traffic conditions to improve generalizability.
 - Refine methodology with stronger ground-filtering and segmentation to improve vehicle detection reliability.
 - Analyze vehicle trajectories to better characterize lateral overtaking behavior across diverse environments.
 
-## Acknowlegements {}
+## Acknowlegements
 
 This material is based upon work supported by the National Science Foundation under [Award Number 2142757](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2142757).
 
@@ -203,7 +191,7 @@ This material is based upon work supported by the National Science Foundation un
 
 ![](images/nsf-logo.png){fig-align="center" height="250"}
 
-## Resources {}
+## Resources
 
 - Slide URL: <>
 - Project webpage: <https://fenggroup.org/lidar-bike/>

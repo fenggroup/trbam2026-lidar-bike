@@ -1,0 +1,15 @@
+project:
+  output-dir: docs
+
+execute:
+  freeze: auto
+    
+format: 
+    revealjs:
+        slide-number: true
+        preview-links: auto
+        css: /assets/styles.css
+        html-math-method: mathjax
+        # logo: /assets/images/fenggroup-logo.png
+        # footer: "Transportation Research Board Annual Meeting 2026"
+
