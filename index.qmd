@@ -3,12 +3,15 @@ title: "Quantifying drivers-overtaking-bicyclists with surrogate safety measures
 
 authors: 
   - name: Rayane Moustafa
+    email: rayanem@umich.edu
     affiliations: 
       - ref: um-dearborn
   - name: Gandhimathi Padmanaban
+    email: gmathi@umich.edu
     affiliations: 
       - ref: um-dearborn
-  - name: Fred Feng
+  - name: Fred Feng*
+    email: fredfeng@umich.edu
     corresponding: true
     affiliations: 
       - ref: um-dearborn
