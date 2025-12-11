@@ -51,13 +51,13 @@ date: 2026-01-14
 # {data-menu-title="The lidar-equipped research bicycle"}
 
 ::: {style="text-align:center;font-size:50px;"}
-![The lidar-equipped research bicycle](./images/lidar-bike.png){fig-align="center" height="580"}
+![The lidar-equipped research bicycle](assets/images/lidar-bike.png){fig-align="center" height="580"}
 :::
 
 # {data-menu-title="Point cloud demo"}
 
 ::: {style="text-align:center;"}
-[![](./images/point-cloud-demo.png){fig-align="center" height="580"}](https://fenggroup.org/pointcloud/examples/bike-2.html){preview-link="true"}
+[![](assets/images/point-cloud-demo.png){fig-align="center" height="580"}](https://fenggroup.org/pointcloud/examples/bike-2.html){preview-link="true"}
 :::
 
 ## Preliminary data collection
@@ -72,9 +72,9 @@ date: 2026-01-14
 - **306** vehicle overtaking events
 :::
 ::: {.column width="40%"}
-![](/images/ride-course.png){fig-align="center"}
+![](assets/images/ride-course.png){fig-align="center"}
 
-![](/images/front-camera-fov.png){fig-align="center"}
+![](assets/images/front-camera-fov.png){fig-align="center"}
 :::
 ::::
 
@@ -91,7 +91,7 @@ date: 2026-01-14
 # {data-menu-title="Algorithm flow chart" }
 
 ::: {style="font-size:50px;"}
-![The overtaking vehicle detection and tracking algorithm](./images/flowchart.png){fig-align="center"}
+![The overtaking vehicle detection and tracking algorithm](assets/images/flowchart.png){fig-align="center"}
 :::
 
 
@@ -99,12 +99,12 @@ date: 2026-01-14
 
 :::: {.columns}
 ::: {.column}
-![](images/segmented-vehicle-1.png)
-![](images/segmented-vehicle-2.png)
+![](assets/images/segmented-vehicle-1.png)
+![](assets/images/segmented-vehicle-2.png)
 :::
 ::: {.column}
-![](images/segmented-vehicle-3.png)
-![](images/segmented-vehicle-4.png)
+![](assets/images/segmented-vehicle-3.png)
+![](assets/images/segmented-vehicle-4.png)
 :::
 ::::
 
@@ -118,10 +118,10 @@ Segmented overtaking vehicles with their 3D bounding boxes
 
 :::: {.columns}
 ::: {.column}
-![Begin of passing](images/passing-phase-begin.png)
+![Begin of passing](assets/images/passing-phase-begin.png)
 :::
 ::: {.column}
-![End of passing](images/passing-phase-end.png)
+![End of passing](assets/images/passing-phase-end.png)
 :::
 ::::
 
@@ -142,29 +142,29 @@ Segmented overtaking vehicles with their 3D bounding boxes
 
 :::: {.columns}
 ::: {.column}
-![](images/c3ft-validation.png)
+![](assets/images/c3ft-validation.png)
 :::
 ::: {.column}
-![](images/passing-dist.png)
+![](assets/images/passing-dist.png)
 :::
 ::::
 
 # {data-menu-title="Bicycle speed validation" }
 
 ::: {style="font-size:45px"}
-![Validation of bicycle speed estimation based on GPS speed ground truth](images/bicycle-speed-validation.png){fig-align="center"}
+![Validation of bicycle speed estimation based on GPS speed ground truth](assets/images/bicycle-speed-validation.png){fig-align="center"}
 :::
 
 # {data-menu-title="Result figures"}
 
 :::: {.columns}
 ::: {.column}
-![](images/passing-dist-hist.png)
-![](images/passing-duration-hist.png)
+![](assets/images/passing-dist-hist.png)
+![](assets/images/passing-duration-hist.png)
 :::
 ::: {.column}
-![](images/passing-speed-hist.png)
-![](images/passing-speed-vs-duration.png)
+![](assets/images/passing-speed-hist.png)
+![](assets/images/passing-speed-vs-duration.png)
 :::
 ::::
 
@@ -181,7 +181,7 @@ Segmented overtaking vehicles with their 3D bounding boxes
 - Refine methodology with stronger ground-filtering and segmentation to improve vehicle detection reliability.
 - Analyze vehicle trajectories to better characterize lateral overtaking behavior across diverse environments.
 
-## Acknowlegements
+## Acknowledgements
 
 This material is based upon work supported by the National Science Foundation under [Award Number 2142757](https://www.nsf.gov/awardsearch/show-award?AWD_ID=2142757).
 
@@ -189,7 +189,7 @@ This material is based upon work supported by the National Science Foundation un
 "CAREER: Improving Bicycling Safety by Developing a Research Framework for Studying Driver-Bicyclist Interactions"
 :::
 
-![](images/nsf-logo.png){fig-align="center" height="250"}
+![](assets/images/nsf-logo.png){fig-align="center" height="250"}
 
 ## References
 
